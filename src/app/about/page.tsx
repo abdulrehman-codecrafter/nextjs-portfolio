@@ -1,6 +1,6 @@
 import TechStack from "@/components/custom/tech-stack";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { ArrowUpRight, Download, Briefcase, Target, Code } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

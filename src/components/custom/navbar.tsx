@@ -108,7 +108,7 @@ export default function Navbar() {
         suppressHydrationWarning
       />
       <ul className="flex items-center sm:gap-2 relative z-10">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <motion.li key={item.label} className="relative">
             <motion.div
               className="block rounded-xl overflow-visible group relative"

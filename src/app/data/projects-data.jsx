@@ -61,31 +61,21 @@ export const projects = [
     {
         icon: <Pizza className="w-6 h-6 text-blue-400" />,
         title: "Foodman",
-        description: " Foodman is a food delivery app that allows users to order food from local restaurants and track their orders in real-time. The app features a user-friendly interface, integration with various payment gateways, and responsive design for mobile and desktop devices.",
+        description:
+            " Foodman is a food delivery app that allows users to order food from local restaurants and track their orders in real-time. The app features a user-friendly interface, integration with various payment gateways, and responsive design for mobile and desktop devices.",
         href: "/projects/foodman",
         slug: "foodman",
         image: "/assets/images/foodman.png",
         liveUrl: "#",
         githubUrl: "#",
         technologies: [
-            {name:"React (Vite)",
-            icon: "/assets/icons/reactjs.svg"
-            },
-            {name:"Node.js",
-            icon: "/assets/icons/nodejs.svg"
-            },
-            // {name:"Express",
-            // icon: "/assets/icons/expressjs.svg"
-            // },
-            {name:"Vanilla CSS",
-            icon: "/assets/icons/css3.svg"
-            },
-            // {name:"JavaScript",
-            // icon: "/assets/icons/javascript.svg"
-            // },
+            { name: "React (Vite)", icon: "/assets/icons/vitejs.svg" },
+
+            { name: "Firebase", icon: "/assets/icons/firebase.svg" },
+            { name: "Vanilla CSS", icon: "/assets/icons/css3.svg" },
+            { name: "JavaScript", icon: "/assets/icons/js.svg" },
         ],
-            
-        
+
         features: [
             "User-friendly food ordering interface",
             "Real-time order tracking",
@@ -96,7 +86,8 @@ export const projects = [
     {
         icon: <DollarSign className="w-6 h-6 text-green-400" />,
         title: "Currencee",
-        description: "Currencee is a user-friendly and reliable currency converter app designed to provide seamless and accurate currency conversion operations. With support for over 160 world currencies, it helps users quickly convert values across popular currencies such as USD, EUR, GBP, INR, and more. It also integrates an API for real-time conversion rates, ensuring that the data remains up-to-date.",
+        description:
+            "Currencee is a user-friendly and reliable currency converter app designed to provide seamless and accurate currency conversion operations. With support for over 160 world currencies, it helps users quickly convert values across popular currencies such as USD, EUR, GBP, INR, and more. It also integrates an API for real-time conversion rates, ensuring that the data remains up-to-date.",
         href: "/projects/currencee",
         slug: "currencee",
         image: "/assets/images/currencee.png",
@@ -119,7 +110,8 @@ export const projects = [
     {
         icon: <Star className="w-6 h-6 text-purple-400" />,
         title: "Legendarysuni",
-        description: "Legendarysuni is a digital Electronic Press Kit (EPK) for a singer/songwriter, showcasing their music, bio, and portfolio in an elegant and easy-to-navigate format. The app features sections for press releases, upcoming events, music releases, and media, aimed at providing a comprehensive view of the artist’s career for fans, journalists, and promoters.",
+        description:
+            "Legendarysuni is a digital Electronic Press Kit (EPK) for a singer/songwriter, showcasing their music, bio, and portfolio in an elegant and easy-to-navigate format. The app features sections for press releases, upcoming events, music releases, and media, aimed at providing a comprehensive view of the artist’s career for fans, journalists, and promoters.",
         href: "/projects/legendarysuni",
         slug: "legendarysuni",
         image: "/assets/images/suni.png",
@@ -142,7 +134,8 @@ export const projects = [
     {
         icon: <Rocket className="w-6 h-6 text-red-400" />,
         title: "Space Explorer",
-        description: "Space Explorer is an educational app that allows users to explore the universe, learn about celestial bodies, and view detailed information about planets, moons, stars, and galaxies. It integrates NASA's API to provide live data about space missions, astronomical events, and upcoming launches.",
+        description:
+            "Space Explorer is an educational app that allows users to explore the universe, learn about celestial bodies, and view detailed information about planets, moons, stars, and galaxies. It integrates NASA's API to provide live data about space missions, astronomical events, and upcoming launches.",
         href: "/projects/space-explorer",
         slug: "space-explorer",
         image: "/assets/images/space-explorer.png",
