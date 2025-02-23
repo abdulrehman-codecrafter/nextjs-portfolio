@@ -1,101 +1,157 @@
+"use client";
 import Image from "next/image";
+import ExploreButton from "../components/ui/explore-btn";
+import { BlurFade } from "@/components/ui/blur-fade";
+import {
+    GitHubButton,
+    InstagramButton,
+    LinkedInButton,
+    WhatsAppButton,
+} from "@/components/custom/social-links";
+import { Cpu, Rocket, Smartphone, Zap } from "lucide-react";
 
+import ChooseMeCard from "@/components/custom/choose-me-card";
+import HighlightedProject from "@/components/custom/highlighted-project";
+import Link from "next/link";
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <div className="w-[93%] sm:[80%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-20 px-4 dark:text-[#A1A1AA]">
+            {/* Hero Section */}
+            <div className="flex items-center justify-between flex-col-reverse md:flex-row mt-10 lg:mt-20 pt-10">
+                {/* Hero Introduction */}
+                <div className="self-start ">
+                    <BlurFade delay={0.01} inView direction="right">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                            Hi, I'm
+                            <span className="bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500">
+                                {" "}
+                                Abdul Rahman
+                            </span>
+                            <br />
+                            Software Engineer
+                        </h1>
+                    </BlurFade>
+                    <BlurFade delay={0.1} inView direction="right">
+                        <div className="text-lg mt-4 ">
+                            I like to build beautiful web and mobile apps with
+                            code. <br /> I also talk and write about those
+                            things.
+                        </div>
+                    </BlurFade>
+                    <BlurFade delay={0.2} inView direction="right">
+                        <div className="my-8">
+                            <Link href="/about">
+                                <ExploreButton />
+                            </Link>
+                        </div>
+                    </BlurFade>
+                    <BlurFade delay={0.3} inView direction="down">
+                        <div className="flex gap-5 mt-10">
+                            <LinkedInButton />
+                            <GitHubButton />
+                            <InstagramButton />
+                            <WhatsAppButton />
+                        </div>
+                    </BlurFade>
+                </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                {/* Hero Image */}
+                <BlurFade inView direction="down">
+                    <Image
+                        src="/assets/images/profile1.png"
+                        alt="logo"
+                        priority
+                        width={370}
+                        height={370}
+                    />
+                </BlurFade>
+            </div>
+
+            {/* Why Choose Me */}
+
+            <div className="mt-8">
+                <BlurFade delay={0.4} direction="down" inView>
+                    <h1 className="text-violet-500 dark:text-violet-400 font-semibold text-[22px] mb-6">
+                        Why Choose Me
+                    </h1>
+                </BlurFade>
+                <BlurFade delay={0.5} direction="down" inView>
+                    <div className="flex gap-4 flex-wrap mt-10">
+                        <ChooseMeCard
+                            icon={<Cpu size={24} />}
+                            title="Scalable Web Apps"
+                            description="Building high-performance web applications with modern frameworks like React, Next.js, and Node.js."
+                            iconBgColor="#6c8ae4" // Lighter shade of #185adb
+                        />
+                        <ChooseMeCard
+                            icon={<Smartphone size={24} />}
+                            title="Robust Mobile Solutions"
+                            description="Creating cross-platform and native mobile applications with React Native for seamless user experiences."
+                            iconBgColor="#ff6b8b" // Lighter shade of #ff3e67
+                        />
+                        <ChooseMeCard
+                            icon={<Zap size={24} />}
+                            title="Optimized Performance"
+                            description="Ensuring fast, secure, and efficient code for smooth functionality across web and mobile devices."
+                            iconBgColor="#8bc78a" // Lighter shade of #62b15c
+                        />
+                    </div>
+                </BlurFade>
+            </div>
+
+            {/* HighLighted Projects */}
+
+            <div className="mt-12">
+                <BlurFade direction="down" inView>
+                    <h1 className=" text-violet-500 dark:text-violet-400 font-semibold text-[22px] ">
+                        What I've been working on
+                    </h1>
+                </BlurFade>
+                <BlurFade delay={0.05} direction="down" inView>
+                    <p className=" text-[#6A6A6A] font-medium text-[18px] mb-4">
+                        Highlighted Projects
+                    </p>
+                </BlurFade>
+                <BlurFade delay={0.1} direction="down" inView>
+                    <div className="flex flex-wrap mt-1 gap-10">
+                        <HighlightedProject />
+                    </div>
+                </BlurFade>
+            </div>
+
+            {/* Contact  */}
+            <BlurFade delay={0.15} direction="down" inView>
+                <div className="my-6">
+                    <h1 className=" text-violet-500 dark:text-violet-400 font-semibold text-[22px] mt-12">
+                        Get in Touch
+                    </h1>
+                    <p className=" text-[#6A6A6A] font-medium text-[18px] mb-4">
+                        Let's Connect
+                    </p>
+                    <div className="bg-[#d4d4d434] dark:bg-[#2626263b] p-6 rounded-lg max-w-[1000px]">
+                        {/* <ContactCard /> */}
+                        <div className="flex gap-3">
+                            <Rocket size={24} />
+                            <h3 className="text-lg font-semibold">
+                                Let's work together!
+                            </h3>
+                        </div>
+                        <p>
+                            I'm available for freelance projects and would love
+                            to explore potential collaborations. Feel free to
+                            email me, and let's discuss how we can work
+                            together!
+                        </p>
+                        <Link href="/contact">
+                            <button className="bg-violet-500 text-white px-4 py-2 mt-4 rounded-lg">
+                                Contact Me
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </BlurFade>
+
+            
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
