@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-20 px-4 dark:text-[#A1A1AA]">
+        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-10 md:pt-20 px-4 dark:text-[#A1A1AA]">
             <div className="flex flex-col-reverse md:flex-row items-start gap-12 pt-20">
                 {/* Left Section */}
                 <div className="flex-1">
@@ -102,7 +102,7 @@ export default function Page() {
                 </div>
 
                 {/* Right Section */}
-                <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-[450px] md:w-[310px] lg:w-[400px] pt-16">
+                <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-[450px] md:w-[310px] lg:w-[400px] ">
                     <BlurFade direction="right" inView>
                         <div className="rounded-2xl overflow-hidden w-full mt-6">
                             <Image
@@ -155,12 +155,12 @@ export default function Page() {
                     </h2>
                     <div className="flex gap-4">
                         <div>
-                            <Image
+                            <img
                                 src="/assets/images/freelancer.png"
-                                alt="GCUF Logo"
-                                width={80}
-                                height={40}
-                                className="object-cover rounded-lg"
+                                alt="Freelancer Logo"
+                                width={50}
+                                        height={33}
+                                        className="object-cover rounded-lg max-w-[50px]"
                             />
                         </div>
                         <div className="space-y-6 mt-[-5px]">
@@ -196,9 +196,9 @@ export default function Page() {
                                 <Image
                                     src="/assets/images/gcuf-logo.png"
                                     alt="GCUF Logo"
-                                    width={80}
-                                    height={40}
-                                    className="object-cover rounded-lg"
+                                    width={50}
+                                        height={33}
+                                        className="object-cover rounded-lg max-w-[50px]"
                                 />
                             </div>
                             <div className="mt-[-5px]">
@@ -223,15 +223,17 @@ export default function Page() {
                         </div>
 
                         <div className="flex gap-4">
-                            <div>
-                                <Image
-                                    src="/assets/images/rcs-logo.png"
-                                    alt="RCS Logo"
-                                    width={90}
-                                    height={40}
-                                    className="object-cover rounded-lg"
-                                />
-                            </div>
+                            
+                                <div >
+                                    <Image
+                                        src="/assets/images/rcs-logo.png"
+                                        alt="RCS Logo"
+                                        width={50}
+                                        height={40}
+                                        className="object-cover rounded-lg max-w-[50px]"
+                                    />
+                                </div>
+                            
                             <div className="mt-[-5px]">
                                 <p className="text-lg font-semibold dark:text-gray-50">
                                     Faculty of Science FSC
