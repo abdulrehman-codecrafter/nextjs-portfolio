@@ -57,13 +57,11 @@ export default function Home() {
                 </div>
 
                 {/* Hero Image */}
-                <BlurFade inView direction="right" delay={0.03}>
+                <BlurFade inView direction="right">
                     <Image
                         src="/assets/images/profile1.png"
                         alt="logo"
                         priority
-                        placeholder="blur"
-                        blurDataURL="/assets/images/profile1.png"
                         width={370}
                         height={370}
                     />
