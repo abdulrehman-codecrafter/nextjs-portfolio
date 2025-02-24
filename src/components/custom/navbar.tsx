@@ -4,7 +4,9 @@ import type * as React from "react"
 import { motion } from "framer-motion"
 import { Home, Code, Contact, User } from "lucide-react"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 import ThemeToggler from "./theme-toggler"
+
 interface MenuItem {
   icon: React.ReactNode
   label: string
@@ -125,30 +127,32 @@ export default function Navbar() {
                   borderRadius: "16px",
                 }}
               />
-              <motion.a
-                href={item.href}
-                className="flex items-center sm:gap-2 px-3 sm:px-4 py-2 relative z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl"
-                variants={itemVariants}
-                transition={sharedTransition}
-                style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
-              >
-                <span className={`transition-colors duration-300 hidden sm:block group-hover:${item.iconColor} text-foreground`}>
-                  {item.icon}
-                </span>
-                <span>{item.label}</span>
-              </motion.a>
-              <motion.a
-                href={item.href}
-                className="flex items-center sm:gap-2 px-3 sm:px-4 py-2 absolute inset-0 z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl"
-                variants={backVariants}
-                transition={sharedTransition}
-                style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
-              >
-                <span className={`transition-colors duration-300 hidden sm:block group-hover:${item.iconColor} text-foreground`}>
-                  {item.icon}
-                </span>
-                <span>{item.label}</span>
-              </motion.a>
+              <Link href={item.href} passHref>
+                <motion.div
+                  className="flex items-center sm:gap-2 px-3 sm:px-4 py-2 relative z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl"
+                  variants={itemVariants}
+                  transition={sharedTransition}
+                  style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
+                >
+                  <span className={`transition-colors duration-300 hidden sm:block group-hover:${item.iconColor} text-foreground`}>
+                    {item.icon}
+                  </span>
+                  <span>{item.label}</span>
+                </motion.div>
+              </Link>
+              <Link href={item.href} passHref>
+                <motion.div
+                  className="flex items-center sm:gap-2 px-3 sm:px-4 py-2 absolute inset-0 z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl"
+                  variants={backVariants}
+                  transition={sharedTransition}
+                  style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
+                >
+                  <span className={`transition-colors duration-300 hidden sm:block group-hover:${item.iconColor} text-foreground`}>
+                    {item.icon}
+                  </span>
+                  <span>{item.label}</span>
+                </motion.div>
+              </Link>
             </motion.div>
           </motion.li>
         ))}
@@ -157,4 +161,3 @@ export default function Navbar() {
     </motion.nav>
   )
 }
-
