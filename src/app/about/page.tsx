@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import TechStack from "@/components/custom/tech-stack";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ArrowUpRight, Download } from "lucide-react";
