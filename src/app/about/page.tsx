@@ -110,6 +110,8 @@ export default function Page() {
                             <Image
                                 src="/assets/images/profile2.jpg"
                                 alt="Profile photo"
+                                placeholder="blur"
+                                blurDataURL="/assets/images/profile2.jpg"
                                 priority
                                 width={370}
                                 height={370}
@@ -161,9 +163,11 @@ export default function Page() {
                             <Image
                                 src="/assets/images/freelancer.png"
                                 alt="Freelancer Logo"
+                                placeholder="blur"
+                                blurDataURL="/assets/images/freelancer.png"
                                 width={50}
-                                        height={33}
-                                        className="object-cover rounded-lg max-w-[50px]"
+                                height={33}
+                                className="object-cover rounded-lg max-w-[50px]"
                             />
                         </div>
                         <div className="space-y-6 mt-[-5px]">
@@ -199,9 +203,11 @@ export default function Page() {
                                 <Image
                                     src="/assets/images/gcuf-logo.png"
                                     alt="GCUF Logo"
+                                    placeholder="blur"
+                                    blurDataURL="/assets/images/gcuf-logo.png"
                                     width={50}
-                                        height={33}
-                                        className="object-cover rounded-lg max-w-[50px]"
+                                    height={33}
+                                    className="object-cover rounded-lg max-w-[50px]"
                                 />
                             </div>
                             <div className="mt-[-5px]">
@@ -226,17 +232,18 @@ export default function Page() {
                         </div>
 
                         <div className="flex gap-4">
-                            
-                                <div >
-                                    <Image
-                                        src="/assets/images/rcs-logo.png"
-                                        alt="RCS Logo"
-                                        width={50}
-                                        height={40}
-                                        className="object-cover rounded-lg max-w-[50px]"
-                                    />
-                                </div>
-                            
+                            <div>
+                                <Image
+                                    src="/assets/images/rcs-logo.png"
+                                    alt="RCS Logo"
+                                    placeholder="blur"
+                                    blurDataURL="/assets/images/rcs-logo.png"
+                                    width={50}
+                                    height={40}
+                                    className="object-cover rounded-lg max-w-[50px]"
+                                />
+                            </div>
+
                             <div className="mt-[-5px]">
                                 <p className="text-lg font-semibold dark:text-gray-50">
                                     Faculty of Science FSC

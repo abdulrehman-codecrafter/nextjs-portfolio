@@ -101,6 +101,8 @@ export default async function ProjectDetail({ params }) {
                             >
                                 <Image
                                     src={tech.icon}
+                                    placeholder="blur"
+                                    blurDataURL={tech.icon}
                                     width={24}
                                     height={24}
                                     alt={tech.name}
