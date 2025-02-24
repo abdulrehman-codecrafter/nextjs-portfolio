@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
-import {projects} from "@/app/data/projects-data"
+import {projects} from "@/data/projects-data"
 
 export default function Projects() {
     return (
-        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-20 px-4 dark:text-[#A1A1AA]">
-            <div className="pt-20">
+        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-24 md:pt-36 px-4 dark:text-[#A1A1AA]">
+            <div className="">
                 <BlurFade  direction="right" inView>
                     <h1 className="text-5xl font-bold">
                         <span className="bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500">
@@ -29,7 +29,7 @@ export default function Projects() {
                     {projects.map((project) => (
                         <div
                             key={project.title}
-                            className="px-4 cursor-pointer w-[350px] md:w-[300px] lg:w-[32%] rounded-2xl shadow-xl bg-[#d4d4d434] dark:bg-[#26262656]"
+                            className="px-4 cursor-pointer w-[350px] md:w-[300px] lg:w-[32%] rounded-2xl  bg-[#d4d4d434] dark:bg-[#27272B66] hover:border-l-4 hover:border-violet-400 transition-all duration-300 pr-6"
                             
                         >
                             <Link

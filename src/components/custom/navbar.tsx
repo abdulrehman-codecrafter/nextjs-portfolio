@@ -97,7 +97,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="p-2 bg-gradient-to-b from-background/80 to-background/40 border border-border/40 overflow-hidden mx-auto my-3 fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[351px] sm:w-[541px] md:w-[550px] text-[15px] sm:text-[16px] backdrop-blur-3xl rounded-xl shadow-lg"
+      className="p-2 bg-gradient-to-b from-background/80 to-background/40  overflow-hidden mx-auto my-3 fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[351px] sm:w-[541px] md:w-[550px] text-[15px] sm:text-[16px] backdrop-blur-2xl rounded-xl shadow-lg"
       initial="initial"
       whileHover="hover"
       suppressHydrationWarning

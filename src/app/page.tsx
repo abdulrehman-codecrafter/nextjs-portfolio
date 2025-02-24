@@ -8,14 +8,14 @@ import {
     LinkedInButton,
     WhatsAppButton,
 } from "@/components/custom/social-links";
-import { Cpu, Rocket, Smartphone, Zap } from "lucide-react";
+import { ChevronRight, Cpu, Rocket, Smartphone, Zap } from "lucide-react";
 
 import ChooseMeCard from "@/components/custom/choose-me-card";
 import HighlightedProject from "@/components/custom/highlighted-project";
 import Link from "next/link";
 export default function Home() {
     return (
-        <div className="w-[93%] sm:[80%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-20 px-4 dark:text-[#A1A1AA]">
+        <div className="w-[93%] sm:[80%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-16 px-4 dark:text-[#A1A1AA]">
             {/* Hero Section */}
             <div className="flex items-center justify-between flex-col-reverse md:flex-row mt-10 lg:mt-20 pt-10">
                 {/* Hero Introduction */}
@@ -80,18 +80,22 @@ export default function Home() {
                         <ChooseMeCard
                             icon={<Cpu size={24} />}
                             title="Scalable Web Apps"
+                            webLink="https://medium.com/theymakedesign/scalable-web-applications-be3231ef47e8"
                             description="Building high-performance web applications with modern frameworks like React, Next.js, and Node.js."
                             iconBgColor="#6c8ae4" // Lighter shade of #185adb
                         />
                         <ChooseMeCard
                             icon={<Smartphone size={24} />}
                             title="Robust Mobile Solutions"
+                            webLink="https://www.techtarget.com/searchmobilecomputing/definition/cross-platform-mobile-development"
+                            
                             description="Creating cross-platform and native mobile applications with React Native for seamless user experiences."
                             iconBgColor="#ff6b8b" // Lighter shade of #ff3e67
-                        />
+                            />
                         <ChooseMeCard
                             icon={<Zap size={24} />}
                             title="Optimized Performance"
+                            webLink="https://www.castsoftware.com/glossary/software-performance-application-engineering-tuning-monitoring"
                             description="Ensuring fast, secure, and efficient code for smooth functionality across web and mobile devices."
                             iconBgColor="#8bc78a" // Lighter shade of #62b15c
                         />
@@ -116,6 +120,12 @@ export default function Home() {
                     <div className="flex flex-wrap mt-1 gap-10">
                         <HighlightedProject />
                     </div>
+                    <Link href={"/projects"}>
+                    <button className="border px-4 py-2 mt-4 rounded-lg flex hover:border-gray-300 dark:hover:border-zinc-700 transition-all duration-100">
+                        See all projects{" "}
+                        <ChevronRight size={18} className="ml-0.5 mt-1 transition-all duration-100" />
+                    </button>
+                    </Link>
                 </BlurFade>
             </div>
 
@@ -128,7 +138,7 @@ export default function Home() {
                     <p className=" text-[#6A6A6A] font-medium text-[18px] mb-4">
                         Let's Connect
                     </p>
-                    <div className="bg-[#d4d4d434] dark:bg-[#2626263b] p-6 rounded-lg max-w-[1000px]">
+                    <div className="bg-[#d4d4d434] dark:bg-[#27272B66] p-6 rounded-lg max-w-[1000px]">
                         {/* <ContactCard /> */}
                         <div className="flex gap-3">
                             <Rocket size={24} />
@@ -150,8 +160,6 @@ export default function Home() {
                     </div>
                 </div>
             </BlurFade>
-
-            
         </div>
     );
 }

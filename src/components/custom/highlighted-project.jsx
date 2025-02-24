@@ -36,7 +36,7 @@ export default function HighlightedProjects() {
         <>
             {projects.map((project, index) => (
                 <div
-                    className="bg-[#d4d4d434] dark:bg-[#2626263b] cursor-pointer flex whitespace-nowrap text-4xl shadow-2xl w-[350px] sm:w-[450px] md:w-[500px] lg:w-[380px] xl:w-[470px] rounded-xl "
+                    className="bg-[#d4d4d434] dark:bg-[#27272B66] cursor-pointer flex whitespace-nowrap text-4xl shadow-sm w-[350px] sm:w-[450px] md:w-[500px] lg:w-[380px] xl:w-[470px] rounded-xl "
                     key={index}
                 >
                     <div className="project-card py-[25px] rounded-lg w-fit">

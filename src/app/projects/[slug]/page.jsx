@@ -1,86 +1,81 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projects } from "@/app/data/projects-data";
+import {projects} from "@/data/projects-data"
 import Safari from "@/components/ui/safari";
-import { div } from "motion/react-client";
 
 export async function generateStaticParams() {
     return projects.map((project) => ({ slug: project.slug }));
 }
 
-export default function ProjectDetail({ params }) {
-    const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetail({ params }) { // Made function async to fix the params error
+    const {slug} =await params;
+    const project = projects.find((p) => p.slug === slug);
 
     if (!project) return notFound();
 
     return (
-        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] max-w-[900px] mx-auto pt-20 px-4 dark:text-[#A1A1AA]">
-            <div className="max-w-6xl mx-auto space-y-12 pt-20">
+        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] max-w-[900px] mx-auto py-24 px-4 dark:text-[#A1A1AA]">
+            <div className="max-w-6xl mx-auto space-y-16">
                 {/* Header */}
-                <div className="flex items-center justify-between">
-                    <h1 className="text-4xl md:text-5xl">{project.title}</h1>
-                    <div className="flex items-center gap-4">
-                        <Link
+                <div className="flex items-center justify-between gap-y-6 flex-wrap">
+                    <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">{project.title}</h1>
+                    <div className="flex items-center gap-6">
+                        <a target="_blank" rel="noreferrer"
                             href={project.liveUrl}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 hover:text-blue-500 transition-colors duration-200"
                         >
-                            <span>Live URL</span>
+                            <span className="text-sm font-medium">Live URL</span>
                             <ArrowUpRight className="w-4 h-4" />
-                        </Link>
-                        <Link
+                        </a>
+                        <a target="_blank" rel="noreferrer"
                             href={project.githubUrl}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
                         >
-                            <span>GitHub</span>
+                            <span className="text-sm font-medium">GitHub</span>
                             <Github className="w-4 h-4" />
-                        </Link>
+                        </a>
                     </div>
                 </div>
 
                 {/* Preview Image */}
-                <div className="rounded-lg overflow-hidden">
-                    
+                <div className="rounded-xl overflow-hidden shadow-2xl">
                     <Safari
                         url="magicui.design"
-                        className="w-[90%] h-min rounded-lg"
+                        className="w-full h-min rounded-xl"
                         imageSrc={project.image}
                     />
                 </div>
 
                 {/* Overview */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl">Overview</h2>
-                    <p className="text-gray-400 text-lg leading-relaxed">
+                <section className="space-y-6">
+                    <h2 className="text-2xl font-semibold">Overview</h2>
+                    <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
                         {project.description}
                     </p>
                 </section>
 
                 {/* Technologies */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl">Technologies</h2>
-                    <ul className="space-y-4 text-gray-400">
+                <section className="space-y-6">
+                    <h2 className="text-2xl font-semibold">Technologies</h2>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {project.technologies.map((tech, index) => (
-                          <div key={index} className="flex items-center gap-2 ">
-                            <Image src={tech
-                            .icon} width={22} height={22} alt={tech.name} />
-                            <li >{tech.name}</li>
-
-
-                          </div>
+                            <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-200">
+                                <Image src={tech.icon} width={24} height={24} alt={tech.name} className="rounded" />
+                                <li className="text-gray-600 dark:text-gray-400">{tech.name}</li>
+                            </div>
                         ))}
                     </ul>
                 </section>
 
                 {/* Features */}
-                <section className="space-y-4">
-                    <h2 className="text-2xl flex items-center gap-2">
-                        <span className="text-gray-400">#</span> Features
+                <section className="space-y-6">
+                    <h2 className="text-2xl font-semibold flex items-center gap-2">
+                        <span className="text-gray-400 font-normal">#</span> Features
                     </h2>
-                    <ul className="space-y-2 text-gray-400 list-disc pl-5">
+                    <ul className="grid gap-3 text-gray-600 dark:text-gray-400 list-disc pl-5">
                         {project.features.map((feature, index) => (
-                            <li key={index}>{feature}</li>
+                            <li key={index} className="pl-2">{feature}</li>
                         ))}
                     </ul>
                 </section>

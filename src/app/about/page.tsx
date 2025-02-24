@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-10 md:pt-20 px-4 dark:text-[#A1A1AA]">
-            <div className="flex flex-col-reverse md:flex-row items-start gap-12 pt-20">
+        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-24 md:pt-36 px-4 dark:text-[#A1A1AA]">
+            <div className="flex flex-col-reverse md:flex-row items-start gap-12 ">
                 {/* Left Section */}
                 <div className="flex-1">
                     <BlurFade direction="up" inView>
@@ -20,7 +20,7 @@ export default function Page() {
                     </BlurFade>
 
                     <BlurFade delay={0.1} direction="up" inView>
-                        <p className="font-medium text-[20px] text-[#6A6A6A] mt-4 mb-8">
+                        <p className="font-medium text-[17px] text-[#6A6A6A] mt-2 mb-8">
                             A short story of me
                         </p>
                     </BlurFade>
