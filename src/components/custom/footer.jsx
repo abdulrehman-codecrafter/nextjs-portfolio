@@ -1,5 +1,5 @@
 
-
+"use client"
 const Footer = () => {
     return (
         <footer className="mt-20 py-4 dark:text-[#A1A1AA]">

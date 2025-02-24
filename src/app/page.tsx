@@ -62,6 +62,8 @@ export default function Home() {
                         src="/assets/images/profile1.png"
                         alt="logo"
                         priority
+                        // placeholder="blur"
+                        // blurDataURL="/assets/images/profile1.png"
                         width={370}
                         height={370}
                     />

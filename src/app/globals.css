@@ -111,7 +111,7 @@
 
 body{
   height: 100vh;
-  background-image: url('/assets/images/noise-min.png');
+  background-image: url('/assets/images/noise.png');
   z-index: -1;
   background-size: 200px 200px;
   background-position: 0 0;
