@@ -1,10 +1,9 @@
-import { useTheme } from "next-themes";
+"use client"
 import Safari from "@/components/ui/safari";
 import TechBadge from "@/components/custom/badge";
 import Link from "next/link";
 
 export default function HighlightedProjects() {
-    const theme = useTheme();
     const projects = [
         {
             title: "Food Ordering Website",
