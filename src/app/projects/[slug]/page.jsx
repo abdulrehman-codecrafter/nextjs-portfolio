@@ -25,7 +25,21 @@ export default async function ProjectDetail({ params }) {
                         {project.title}
                     </h1>
                     <div className="flex items-center gap-6">
-                        <a
+                        {project.isApp ? (
+                            <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href={project.githubUrlFrontened}
+                            className="flex items-center gap-2 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                        >
+                            <span className="text-sm font-medium">
+                                Frontened
+                            </span>
+                            <Github className="w-4 h-4" />
+                        </a>
+                        
+                        ) : (
+                            <a
                             target="_blank"
                             rel="noreferrer"
                             href={project.liveUrl}
@@ -36,13 +50,15 @@ export default async function ProjectDetail({ params }) {
                             </span>
                             <ArrowUpRight className="w-4 h-4" />
                         </a>
+                        )}
+
                         <a
                             target="_blank"
                             rel="noreferrer"
                             href={project.githubUrl}
                             className="flex items-center gap-2 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
                         >
-                            <span className="text-sm font-medium">GitHub</span>
+                            <span className="text-sm font-medium">{project.isApp?"Backened":"Github"}</span>
                             <Github className="w-4 h-4" />
                         </a>
                     </div>
@@ -52,11 +68,10 @@ export default async function ProjectDetail({ params }) {
                 <div className="rounded-xl overflow-hidden flex justify-center">
                     {project.isApp ? (
                         <div className="flex justify-center">
-                        <Android
-                          className="size-full w-[90%] h-min rounded-xl"
-                          src={project.image}
-                          
-                        />
+                            <Android
+                                className="size-full w-[90%] h-min rounded-xl"
+                                src={project.image}
+                            />
                         </div>
                     ) : (
                         <Safari

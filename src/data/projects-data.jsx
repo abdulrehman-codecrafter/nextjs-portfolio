@@ -70,8 +70,10 @@ export const projects = [
         href: "/projects/chatapp",
         slug: "chatapp",
         image: "/assets/images/chatapp.png",
-        liveUrl: "https://chatapp.web.app/",
-        githubUrl: "https://github.com/abdulrehman-codecrafter/chatapp.git",
+        liveUrl: "",
+        githubUrlFrontened: "https://github.com/abdulrehman-codecrafter/ChatApp-Frontened.git",
+        githubUrl: "https://github.com/abdulrehman-codecrafter/chatapp-backened.git",
+
         technologies: [
             { name: "React Native", icon: "/assets/icons/expo.svg" },
             { name: "Websockets", icon: "/assets/icons/sockets.svg" },
