@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-24 md:pt-36 px-4 dark:text-[#A1A1AA]">
+        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-28 md:pt-36 px-4 dark:text-[#A1A1AA]">
             <div className="flex flex-col-reverse md:flex-row items-start gap-12 ">
                 {/* Left Section */}
                 <div className="flex-1">
@@ -107,7 +107,8 @@ export default function Page() {
                         <div className="rounded-2xl overflow-hidden w-full mt-6">
                             <Image
                                 src="/assets/images/profile2.jpg"
-                                alt="Profile photo at the beach"
+                                alt="Profile photo"
+                                priority
                                 width={370}
                                 height={370}
                                 className="object-cover mb-6 rounded-[55px] border-8 border-gray-200 dark:border-gray-400 "

@@ -1,15 +1,16 @@
 import { useTheme } from "next-themes";
 import Safari from "@/components/ui/safari";
 import TechBadge from "@/components/custom/badge";
+import Link from "next/link";
 
 export default function HighlightedProjects() {
     const theme = useTheme();
     const projects = [
         {
             title: "Food Ordering Website",
+            slug:"foodman",
             description:
                 "A seamless online food ordering app built with the MERN stack. Features real-time order tracking, secure payments, and a user-friendly interface.",
-            url: "magicui.design",
             imageSrc: "/assets/images/foodman.png",
             stack: [
                 { name: "React", imageSrc: "/assets/icons/reactjs.svg" },
@@ -18,15 +19,16 @@ export default function HighlightedProjects() {
             ],
         },
         {
-            title: "Ecommerce Website",
+            title: "Meditrack",
+            slug:"meditrack",
             description:
-                "A seamless online products ordering app built with the MERN stack. Features real-time order tracking, secure payments, and a user-friendly interface.",
-            url: "magicui.design",
-            imageSrc: "/assets/images/ecommerce-project.png",
+                "Meditrack is a medical store billing web app that allows users to manage and track sales, inventory, and billing. The app features a user-friendly interface.",
+            imageSrc: "/assets/images/meditrack.png",
             stack: [
-                { name: "React", imageSrc: "/assets/icons/reactjs.svg" },
-                { name: "Mongodb", imageSrc: "/assets/icons/mongodb.svg" },
-                { name: "Nodejs", imageSrc: "/assets/icons/nodejs.svg" },
+                { name: "Nextjs", imageSrc: "/assets/icons/nextjs2.svg" },
+                { name: "Firebase", imageSrc: "/assets/icons/firebase.svg" },
+                { name: "Tailwind CSS", imageSrc: "/assets/icons/tailwindcss.svg" },
+
             ],
         },
         
@@ -35,14 +37,13 @@ export default function HighlightedProjects() {
     return (
         <>
             {projects.map((project, index) => (
-                <div
+                <Link href={`/projects/${project.slug}`} key={index}>
+                    <div
                     className="bg-[#d4d4d434] dark:bg-[#27272B66] cursor-pointer flex whitespace-nowrap text-4xl shadow-sm w-[350px] sm:w-[450px] md:w-[500px] lg:w-[380px] xl:w-[470px] rounded-xl "
-                    key={index}
                 >
                     <div className="project-card py-[25px] rounded-lg w-fit">
                         <div className="flex justify-center overflow-hidden">
                             <Safari
-                                url="magicui.design"
                                 className="w-[90%] h-min rounded-lg"
                                 imageSrc={project.imageSrc}
                             />
@@ -66,6 +67,7 @@ export default function HighlightedProjects() {
                         </div>
                     </div>
                 </div>
+                </Link>
             ))}
         </>
     );

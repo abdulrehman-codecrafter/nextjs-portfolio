@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import {
     GitHubButton,
     InstagramButton,
@@ -6,11 +8,45 @@ import {
 } from "@/components/custom/social-links";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-// import { FaTwitter, FaLinkedin, FaGithub } from "lucide-react";
 
 export default function Contact() {
+    const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false);
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        try {
+            setLoading(true);
+            const res = await fetch(form.action, {
+                method: form.method,
+                headers: {
+                    Accept: "application/json",
+                },
+                body: formData,
+            });
+
+            if (res.ok) {
+                // Reset the form fields after successful submission.
+                form.reset();
+                setStatus("SUCCESS");
+                setTimeout(() => setStatus(""), 5000);
+                // If you need to open a new tab (e.g. for a confirmation page), uncomment below:
+                // window.open("https://your-confirmation-page.com", "_blank");
+            } else {
+                setStatus("ERROR");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            setStatus("ERROR");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <div className="w-[93%] sm:w-[80%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-24  px-4 md:pt-36 dark:text-[#A1A1AA]">
+        <div className="w-[93%] sm:w-[80%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-28 px-4 md:pt-36 dark:text-[#A1A1AA]">
             <div>
                 <BlurFade direction="down" inView>
                     <h1 className="text-4xl font-bold">
@@ -35,42 +71,73 @@ export default function Contact() {
                         <h2 className="text-2xl font-semibold mb-6 dark:text-gray-50">
                             Get in Touch
                         </h2>
-                        <form className="space-y-6">
+                        <form
+                            className="space-y-6"
+                            action="https://formspree.io/f/mbldenpj"
+                            method="POST"
+                            onSubmit={handleSubmit}
+                        >
                             <div>
                                 <input
+                                    name="name"
+                                    required
                                     placeholder="Your Name"
                                     className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d424] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
                                 <input
+                                    name="email"
                                     type="email"
+                                    required
                                     placeholder="Your Email"
                                     className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
                                 <input
+                                    name="subject"
+                                    required
                                     placeholder="Subject"
                                     className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
                                 <textarea
+                                    name="message"
+                                    required
                                     placeholder="Your Message"
                                     className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg min-h-[150px] bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
-                            <button className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none bg-violet-500 text-white rounded-md hover:bg-violet-600 transition-colors">
-                                Send Message
+                            <button
+                                type="submit"
+                                className="w-full px-4 py-2 focus:border-l-[3px] duration-100 shadow-sm focus:border-violet-500 outline-none bg-violet-500 text-white rounded-md hover:bg-violet-600 transition-colors"
+                                disabled={loading}
+                            >
+                                {loading ? "Sending..." : "Send Message"}
                             </button>
                         </form>
+                        {status === "SUCCESS" && (
+                            <BlurFade direction="down" inView>
+                                <p className="mt-4 text-green-600">
+                                    Message sent successfully!
+                                </p>
+                            </BlurFade>
+                        )}
+                        {status === "ERROR" && (
+                            <BlurFade direction="down" inView>
+                                <p className="mt-4 text-red-600">
+                                    There was an error sending your message.
+                                </p>
+                            </BlurFade>
+                        )}
                     </BlurFade>
                 </div>
 
                 <div className="w-full max-w-[500px]">
                     <BlurFade direction="down" inView>
-                        <h1 className="  font-semibold text-[22px] mb-5 dark:text-gray-50">
+                        <h1 className="font-semibold text-[22px] mb-5 dark:text-gray-50">
                             Contact Information
                         </h1>
                     </BlurFade>
@@ -86,6 +153,7 @@ export default function Contact() {
                                         </h3>
                                         <a
                                             target="_blank"
+                                            rel="noreferrer"
                                             href="https://maps.app.goo.gl/iSDzcAAeqYy8b33S7"
                                             className="text-muted-foreground flex"
                                         >
@@ -99,24 +167,25 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                <Phone className="w-6 h-6 text-gray-400 mt-1" />
-                                <div>
-                                    <h3 className="font-medium mb-1 dark:text-gray-200 flex justify-between items-center">
-                                        Phone
-                                    </h3>
-                                    <a
-                                        target="_blank"
-                                        href="tel:+923237449306"
-                                        className="text-muted-foreground flex"
-                                    >
-                                        +92 323 7449306
-                                        <ArrowUpRight
-                                            className="mt-0.5 ms-2"
-                                            size={18}
-                                        />
-                                    </a>
+                                    <Phone className="w-6 h-6 text-gray-400 mt-1" />
+                                    <div>
+                                        <h3 className="font-medium mb-1 dark:text-gray-200 flex justify-between items-center">
+                                            Phone
+                                        </h3>
+                                        <a
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            href="tel:+923237449306"
+                                            className="text-muted-foreground flex"
+                                        >
+                                            +92 323 7449306
+                                            <ArrowUpRight
+                                                className="mt-0.5 ms-2"
+                                                size={18}
+                                            />
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
 
                                 <div className="flex items-start gap-4">
                                     <Mail className="w-6 h-6 text-gray-400 mt-1" />
@@ -126,6 +195,7 @@ export default function Contact() {
                                         </h3>
                                         <a
                                             target="_blank"
+                                            rel="noreferrer"
                                             href="mailto:abdulrahman.sde@gmail.com"
                                             className="text-muted-foreground flex"
                                         >
@@ -138,17 +208,16 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
-                            
                         </BlurFade>
                     </div>
                     <div className="mt-8">
                         <BlurFade direction="down" inView>
-                            <h1 className="  font-semibold text-[21px] dark:text-gray-50">
+                            <h1 className="font-semibold text-[21px] dark:text-gray-50">
                                 Follow Me
                             </h1>
                         </BlurFade>
                         <BlurFade delay={0.05} direction="down" inView>
-                            <p className=" text-[#6A6A6A] font-medium text-[15px] mb-4">
+                            <p className="text-[#6A6A6A] font-medium text-[15px] mb-4">
                                 Social Media Links
                             </p>
                         </BlurFade>

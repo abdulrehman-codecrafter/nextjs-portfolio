@@ -2,10 +2,11 @@
 import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
 import {projects} from "@/data/projects-data"
+import { ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
     return (
-        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-24 md:pt-36 px-4 dark:text-[#A1A1AA]">
+        <div className="w-[95%] sm:[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] mx-auto pt-28 md:pt-36 px-4 dark:text-[#A1A1AA]">
             <div className="">
                 <BlurFade  direction="right" inView>
                     <h1 className="text-5xl font-bold">
@@ -41,10 +42,13 @@ export default function Projects() {
                                         {project.icon}
                                     </div>
                                     <div className="min-w-0">
+                                        <div className="flex items-center justify-between">
                                         <h2 className="text-xl mb-1 truncate  dark:text-gray-50">
                                             {project.title}
                                         </h2>
-                                        <p className=" line-clamp-2">
+                                        <ArrowUpRight size={18} color="#3b5672a8" className="" />
+                                        </div>
+                                        <p className=" line-clamp-2 leading-relaxed ">
                                             {project.description}
                                         </p>
                                     </div>

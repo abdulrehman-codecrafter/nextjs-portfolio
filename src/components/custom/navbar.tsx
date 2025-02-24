@@ -2,7 +2,7 @@
 
 import type * as React from "react"
 import { motion } from "framer-motion"
-import { Home, Info, Code, Contact } from "lucide-react"
+import { Home, Code, Contact, User } from "lucide-react"
 import { useTheme } from "next-themes"
 import ThemeToggler from "./theme-toggler"
 interface MenuItem {
@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
     iconColor: "text-blue-500",
   },
   {
-    icon: <Info className="h-5 w-5" />,
+    icon: <User className="h-5 w-5" />,
     label: "About",
     href: "/about",
     gradient: "radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(234,88,12,0.06) 50%, rgba(194,65,12,0) 100%)",
