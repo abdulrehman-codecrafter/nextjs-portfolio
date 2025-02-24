@@ -1,6 +1,6 @@
 function LinkedInButton({}) {
     return (
-        <a
+        <a target="_blank" rel="noreferrer"
             href="https://www.linkedin.com/in/abdul-rahman-sde?utm_source=share&utm_campaign=share_via&utm_content=profile"
             className="w-[30px] h-[30px] flex items-center justify-center border-none bg-transparent relative rounded-md cursor-pointer transition-all duration-300 group"
         >
@@ -21,7 +21,7 @@ function LinkedInButton({}) {
 
 function GitHubButton() {
     return (
-        <a
+        <a target="_blank" rel="noreferrer"
             href="https://github.com/abdulrehman-codecrafter"
             className="w-[30px] h-[30px] flex items-center justify-center border-none bg-transparent relative rounded-md cursor-pointer transition-all duration-300 group"
         >
@@ -41,7 +41,7 @@ function GitHubButton() {
 }
 function InstagramButton() {
     return (
-        <a
+        <a target="_blank" rel="noreferrer"
             href="https://www.instagram.com/abdulrehmanasif27"
             className="w-[30px] h-[30px] flex items-center justify-center border-none bg-transparent relative rounded-md cursor-pointer transition-all duration-300 group"
         >
@@ -62,7 +62,7 @@ function InstagramButton() {
 }
 function WhatsAppButton() {
     return (
-        <a
+        <a target="_blank" rel="noreferrer"
             href="https://wa.me/923237449306"
             className="w-[30px] h-[30px] flex items-center justify-center border-none bg-transparent relative rounded-md cursor-pointer transition-all duration-300 group"
         >
