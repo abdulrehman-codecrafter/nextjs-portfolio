@@ -156,7 +156,7 @@ export default function Page() {
                     </h2>
                     <div className="flex gap-4">
                         <div>
-                            <img
+                            <Image
                                 src="/assets/images/freelancer.png"
                                 alt="Freelancer Logo"
                                 width={50}
