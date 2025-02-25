@@ -120,13 +120,15 @@ export default function Page() {
                         </div>
 
                         <div className="flex flex-col w-full space-y-4">
-                            <Link
-                                href="#"
+                            <a download
+                                href="/assets/Abdulrahman.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full flex items-center justify-between px-6 py-3 rounded-lg border border-gray-300 dark:border-secondary"
                             >
-                                <span>View Resume</span>
+                                <span>Download Resume</span>
                                 <Download className="w-5 h-5 text-[#00FF85]" />
-                            </Link>
+                            </a>
 
                             <Link
                                 href="mailto:abdulrahman.sde@gmail.com"
