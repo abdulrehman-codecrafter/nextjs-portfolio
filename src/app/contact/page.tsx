@@ -83,7 +83,7 @@ export default function Contact() {
                                     name="name"
                                     required
                                     placeholder="Your Name"
-                                    className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d424] dark:bg-[#27272bb4]"
+                                    className="w-full px-4 py-3 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d424] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
@@ -92,7 +92,7 @@ export default function Contact() {
                                     type="email"
                                     required
                                     placeholder="Your Email"
-                                    className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
+                                    className="w-full px-4 py-3 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
@@ -100,7 +100,7 @@ export default function Contact() {
                                     name="subject"
                                     required
                                     placeholder="Subject"
-                                    className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
+                                    className="w-full px-4 py-3 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <div>
@@ -108,7 +108,7 @@ export default function Contact() {
                                     name="message"
                                     required
                                     placeholder="Your Message"
-                                    className="w-full px-4 py-2 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg min-h-[150px] bg-[#d4d4d434] dark:bg-[#27272bb4]"
+                                    className="w-full px-4 py-3 focus:border-l-[3px] transition-all duration-100 shadow-sm focus:border-violet-500 outline-none rounded-lg min-h-[150px] bg-[#d4d4d434] dark:bg-[#27272bb4]"
                                 />
                             </div>
                             <button
