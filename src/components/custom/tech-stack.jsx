@@ -6,76 +6,70 @@ import { useTheme } from "next-themes";
 const highPriorityTechStacks = [
     {
         name: "Next.js",
-        grayIcon: "/assets/icons/nextjs2-grey.svg",
         colorIcon: "/assets/icons/nextjs2.svg",
     },
-    {
-        name: "React",
-        grayIcon: "/assets/icons/reactjs-grey.svg",
-        colorIcon: "/assets/icons/reactjs.svg",
-    },
+    
     {
         name: "Node.js",
-        grayIcon: "/assets/icons/nodejs-grey.svg",
         colorIcon: "/assets/icons/nodejs.svg",
     },
     {
         name: "MongoDB",
-        grayIcon: "/assets/icons/mongodb-grey.svg",
         colorIcon: "/assets/icons/mongodb.svg",
     },
     {
         name: "MySQL",
-        grayIcon: "/assets/icons/mysql-grey.svg",
         colorIcon: "/assets/icons/mysql.svg",
     },
     {
-        name: "HTML5",
-        grayIcon: "/assets/icons/html5-grey.svg",
-        colorIcon: "/assets/icons/html5.svg",
+        name:"Web Sockets",
+        colorIcon:"/assets/icons/sockets.svg",
+    },
+    
+    {
+        name: "Redis",
+        colorIcon: "/assets/icons/redis.svg",
     },
     {
-        name: "CSS3",
-        grayIcon: "/assets/icons/css3-grey.svg",
-        colorIcon: "/assets/icons/css3.svg",
+        name: "JavaScript",
+        colorIcon: "/assets/icons/js.svg",
     },
+    
     
 ];
 
 const lowPriorityTechStacks = [
     {
+        name: "HTML5",
+        colorIcon: "/assets/icons/html5.svg",
+    },
+    {
+        name: "CSS3",
+        colorIcon: "/assets/icons/css3.svg",
+    },
+    {
         name: "Bootstrap",
-        grayIcon: "/assets/icons/bootstrap4-grey.svg",
         colorIcon: "/assets/icons/bootstrap4.svg",
     },
     {
         name: "Tailwind",
-        grayIcon: "/assets/icons/tailwindcss-grey.svg",
         colorIcon: "/assets/icons/tailwindcss.svg",
     },
     {
         name: "SASS",
-        grayIcon: "/assets/icons/sass-grey.svg",
         colorIcon: "/assets/icons/sass.svg",
     },
-    {
-        name: "JavaScript",
-        grayIcon: "/assets/icons/js-grey.svg",
-        colorIcon: "/assets/icons/js.svg",
-    },
-    {
-        name: "Redis",
-        grayIcon: "/assets/icons/redis-grey.svg",
-        colorIcon: "/assets/icons/redis.svg",
-    },
+    
     {
         name: "Firebase",
-        grayIcon: "/assets/icons/firebase-grey.svg",
         colorIcon: "/assets/icons/firebase.svg",
     },
     {
+        name: "React",
+        colorIcon: "/assets/icons/reactjs.svg",
+    },
+    {
         name: "Vite",
-        grayIcon: "/assets/icons/vitejs-grey.svg",
         colorIcon: "/assets/icons/vitejs.svg",
     },
 ]
